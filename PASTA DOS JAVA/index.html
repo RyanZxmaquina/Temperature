@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Graus Fahreint</title>
+
+    <!-- <link rel="javascript" href="js.js"> -->
+    <script>
+
+
+        function convert() {
+
+
+
+
+
+            var fahrenheit = document.getElementById("fahrenheit").value;
+            var celsius = document.getElementById("celsius").value;
+
+            if (isNaN(fahrenheit) || isNaN(celsius)) {
+                alert("Digite um valor válido!");
+                return
+            } else if (fahrenheit === '') {
+                fahrenheit = (parseFloat(celsius) * 1.8) + 32;
+            } else if (celsius === '') {
+                celsius = (parseFloat(fahrenheit) - 32) / 1.8;
+            }
+
+            document.getElementById("fahrenheit").value = parseFloat(fahrenheit).toFixed(1);
+            document.getElementById("celsius").value = parseFloat(celsius).toFixed(1);
+        }
+
+        
+        function clearForm() {
+            document.getElementById("fahrenheit").value = "";
+            document.write("celsius").value = "";
+        }
+
+    </script>
+</head>
+<style>
+    #container {
+        margin: 0 auto;
+        width: auto;
+        display: table;
+        text-align: center;
+    }
+</style>
+
+<body>
+    <div id="container">
+        <h1>Temperature Converter</h1>
+
+        <input type="text" id="fahrenheit" placeholder="Fahrenheit" name="f" value="" />
+
+        <input type="text" id="celsius" placeholder="Celsius" name="c" value="" />
+
+        <button id="convert" onclick="convert()">Convert!</button>
+        <button id="clear" onclick="clearForm()">Reset</button>
+        <html>
+  <title>Reset</title>
+  <META http-equiv=refresh>
+    </div>
+
+</body>
+
+</html>
+
